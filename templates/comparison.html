@@ -1,0 +1,62 @@
+{% include "head.html" %}
+{% include "header.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+    <!-- It starts the comparison <section> -->
+    <section id="comparison" class="comparison">
+      <div class="row">
+        <div class="first-music col-lg-4 col-md-4 col-sm-4 order-lg-first order-md-first order-sm-first">
+          <img src="{{music1[3]}}" class='music-image'/>
+          <h2>{{music1[1]}}</h2>
+          <h3>{{music1[0]}}</h3>
+          {% if music1[4] == 'Nauru' %}
+            <h4>Language Not Found</h4>
+          {% else %}
+            <h4>{{music1[4]}}</h4>
+          {% endif %}
+          <ul>
+            <div class="slidecontainer">
+            <li class="attributes-item">Danceability <span data-toggle="tooltip" title="{{attributes['danceability']}}"><i class="fas fa-info-circle"></i></span></li>
+            <span title="{{music1[2]['danceability']}}"><input type="range" min="0" max="1" value="{{music1[2]['danceability']}}" step="0.01" class="slider" disabled=True></span>
+            <li class="attributes-item">Energy <span data-toggle="tooltip" title="{{attributes['energy']}}"><i class="fas fa-info-circle"></i></span></li>
+              <span title="{{music1[2]['energy']}}"><input type="range" min="0" max="1" value="{{music1[2]['energy']}}" step="0.01" class="slider" disabled=True></span>
+            <li class="attributes-item">Acousticness <span data-toggle="tooltip" title="{{attributes['acousticness']}}"><i class="fas fa-info-circle"></i></span></li>
+              <span title="{{music1[2]['acousticness']}}"><input type="range" min="0" max="1" value="{{music1[2]['acousticness']}}" step="0.01" class="slider" disabled=True></span>
+            <li class="attributes-item">Valence <span data-toggle="tooltip" title="{{attributes['valence']}}"><i class="fas fa-info-circle"></i></span></li>
+              <span title="{{music1[2]['valence']}}"><input type="range" min="0" max="1" value="{{music1[2]['valence']}}" step="0.01" class="slider" disabled=True></span>
+            </div>
+          </ul>
+        </div>
+        <div class="results col-lg-4 col-md-4 col-sm-4 order-first">
+          <h1 class="results-title">Music Match</h1>
+          <div class="circle">
+            <div class="circle-txt">{{final}}%</div>
+          </div>
+          {% include "final_score.html" %}
+          <a href="{{url_for('home')}}" style="text-decoration: none"><button class="button-compare">Try Again</button></a>
+        </div>
+        <div class="second-music col-lg-4 col-md-4 col-sm-4">
+          <img src="{{music2[3]}}" class='music-image'/>
+          <h2>{{music2[1]}}</h2>
+          <h3>{{music2[0]}}</h3>
+          {% if music1[4] == 'Nauru' %}
+            <h4>Language Not Found</h4>
+          {% else %}
+              <h4>{{music1[4]}}</h4>
+          {% endif %}
+          <ul>
+            <div class="slidecontainer">
+            <li class="attributes-item">Danceability <span data-toggle="tooltip" title="{{attributes['danceability']}}"><i class="fas fa-info-circle"></i></span></li>
+            <span title="{{music2[2]['danceability']}}"><input type="range" min="0" max="1" value="{{music2[2]['danceability']}}" step="0.01" class="slider" disabled=True></span>
+            <li class="attributes-item">Energy <span data-toggle="tooltip" title="{{attributes['energy']}}"><i class="fas fa-info-circle"></i></span></li>
+              <span title="{{music2[2]['energy']}}"><input type="range" min="0" max="1" value="{{music2[2]['energy']}}" step="0.01" class="slider" disabled=True></span>
+            <li class="attributes-item">Acousticness <span data-toggle="tooltip" title="{{attributes['acousticness']}}"><i class="fas fa-info-circle"></i></span></li>
+              <span title="{{music2[2]['acousticness']}}"><input type="range" min="0" max="1" value="{{music2[2]['acousticness']}}" step="0.01" class="slider" disabled=True></span>
+            <li class="attributes-item">Valence <span data-toggle="tooltip" title="{{attributes['valence']}}"><i class="fas fa-info-circle"></i></span></li>
+              <span title="{{music2[2]['valence']}}"><input type="range" min="0" max="1" value="{{music2[2]['valence']}}" step="0.01" class="slider" disabled=True></span>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </section>
+</body>

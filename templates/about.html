@@ -1,0 +1,80 @@
+{% include "head.html" %}
+{% include "header.html" %}
+
+<div class="row">
+  <div class="col-lg-3 col-md-3">
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-12 about">
+    <h1>About</h1>
+    <h2>How it started?</h2>
+    <p class="about-text">The project arisen from my eagerness in learning to code. Coding has always been around me, in some shape or form,
+      but I've never attempted to properly explore it - shame on me. I've decided to challenge myself to finally put
+      effort to leave this limbo. Python sounded as the right choice, given its vast applicability and easy syntax.
+      I chose a worth value for money Udemy course, 100 Days of Code. It took me a little longer than 100 Days,
+      but I do recommend for all beginners like me.
+    </p>
+    <h2>The Idea</h2>
+      <p class="about-text">While learning how to work with APIs, I got amazed by Spotify one: A well written documentation, with
+        a vast number of music metadata & parameters available. It triggered me a desire to finally ship something tangible
+        and stop the eternal loop of watching YouTube Videos and my own Python Console.</p>
+      <p class="about-text">What if I could compare different musics and come with a score showing how likely they are? Even better:
+        in a Web-Based application so anyone can use it? Here we are.
+      </p>
+    <h2>Technologies used</h2>
+    <ol class="about-text">
+      <li>Python 3.8</li>
+      <li>CSS: Bootstrap 4</li>
+      <li>Web Framework: Python Flask</li>
+      <li>Spotify API</li>
+      <li>MusixMatch API</li>
+      <li>Langdetect</li>
+    </ol>
+    <h2>How was built?</h2>
+    <p class="about-text">
+      Spotify API is the main component of this application. The search is based on Spotify library of Artists and Musics,
+      returning the respective Artist, Music, Cover Image and Music Metadata. Let's dive in to understand some of the music metadata
+      parameters available:
+    </p>
+    <ul class="about-text">
+      <li>
+        <strong>Danceability:</strong> <i>describes how suitable a track is for dancing based on a combination of musical elements
+        including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and
+        1.0 is most danceable.</i>
+      </li>
+      <li>
+        <strong>Energy:</strong> <i>represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast,
+        loud, and noisy.</i>
+      </li>
+      <li>
+        <strong>Acousticness:</strong> <i>describes how acoustic a song is. A score of 1.0 means the song is most likely to be an acoustic one.</i>
+      </li>
+      <li>
+        <strong>Valence:</strong> <i>A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with
+        high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more
+        negative (e.g. sad, depressed, angry).</i>
+      </li>
+      <br>
+    </ul>
+      <p class="about-text">
+        In addition to it, I've introduced MusixMatch API, allowing the application to return the lyric of
+        the respective music. Unfortunately neither Spotify nor MusixMatch API provide the language of a track. To figure it out,
+        I've utilized <em>langdetect</em> a language-detection algorithm library.
+      </p>
+    <h2>Final Score</h2>
+    <p class="about-text">
+      The final score algorithm is built upon the parameters mentioned below. By no means it aims to be close to reality,
+      most of the metadata available on Spotify is questionable - so let's just have fun.
+    </p>
+    <ol class="about-text">
+      <li>Spotify Music Metadata</li>
+      <li>Artist/Song Genre</li>
+      <li>Artist/Song Language</li>
+    </ol>
+
+  </div>
+  <div class="col-lg-3 col-md-3">
+  </div>
+</div>
+</body>
+
+</html>

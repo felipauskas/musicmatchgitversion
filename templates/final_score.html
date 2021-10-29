@@ -1,0 +1,29 @@
+{% if final == 100 %}
+<p class="results-text">
+    Nice try. They are exactly the same music...<br>Perhaps you would like to try again?
+</p>
+{% elif final > 89 %}
+<p class="results-text">
+    Damn. These musics have a lot of similarities! You knew it from the beginning, didn't you? Check out their attributes, they are almost the same!
+</p>
+{% elif final > 79 %}
+<p class="results-text">
+    They sound-a-like, some attributes are close, but others distinguish them.
+    Check out their attributes to understand their differences.
+</p>
+{% elif final > 69 %}
+<p class="results-text">
+    Ehh... It sounds similar, but not that much... Perhaps one element, here and there, but in general... no.
+    Check out their attributes; they are quite different except from one of them.
+</p>
+{% elif final > 59 %}
+<p class="results-text">
+    No, no, no... They have only one attribute similar - nothing alike!
+    Check out their attributes to understand their differences.
+</p>
+{% else %}
+<p class="results-text">
+    I strongly recommend you cleaning your ear... They don't have anything alike!
+    Check out their attributes; they are completely different!
+</p>
+{% endif %}
